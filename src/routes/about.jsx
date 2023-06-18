@@ -11,7 +11,7 @@ export default function About() {
       </div>
 
       <div className="container px-4 py-5" id="icon-grid">
-        <h2 className="pb-2 border-bottom text-white">
+        <h2 className="pb-2 border-bottom">
           Основные направления деятельности
         </h2>
 

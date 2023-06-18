@@ -10,6 +10,7 @@ import SignUp from "./routes/signup";
 import About from "./routes/about";
 import Prices from "./routes/prices";
 import Faqs from "./routes/faqs";
+import Download from "./routes/download";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
     element: (
       <Base>
         <Faqs />
+      </Base>
+    ),
+  },
+  {
+    path: "/download",
+    element: (
+      <Base>
+        <Download />
       </Base>
     ),
   },

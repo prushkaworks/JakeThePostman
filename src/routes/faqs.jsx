@@ -16,7 +16,7 @@ export default function Faqs() {
             </a>
           </p>
           <div class="collapse " id="collapseExample">
-            <div class="card card-body text-white">
+            <div class="card card-body">
               <p>
                 Изменить данные пользователя можно в личном кабинете. Чтобы
                 зайти в личный кабинет, необходимо авторизоваться на сайте а

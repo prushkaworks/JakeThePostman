@@ -1,8 +1,8 @@
 export default function Prices() {
   return (
     <>
-      <div className="container py-3">
-        <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <div className="container py-3 align-items-center">
+        <div className="pricing-header p-3 pb-md-4 mx-auto align-text-middle text-center">
           <h1 className="display-4 fw-normal text-body-emphasis">Цены</h1>
           <p className="fs-5 text-body-secondary">
             Просмотрите доступные планы приложения и выберите наиболее
