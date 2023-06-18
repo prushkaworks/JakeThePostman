@@ -11,6 +11,7 @@ import About from "./routes/about";
 import Prices from "./routes/prices";
 import Faqs from "./routes/faqs";
 import Download from "./routes/download";
+import Board from "./routes/board";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         <Download />
       </Base>
     ),
+  },
+  {
+    path: "/board",
+    element: <Board />,
   },
 ]);
 
