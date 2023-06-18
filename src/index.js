@@ -13,6 +13,12 @@ import { SignUp } from "./routes/signup";
 import SidebarBase from "./routes/sidebar-base";
 import MainSidebar from "./routes/main-sidebar";
 import Profile from "./routes/profile";
+import About from "./routes/about";
+import Faqs from "./routes/faqs";
+import Prices from "./routes/prices";
+import Works from "./routes/works";
+import Desks from "./routes/desks";
+import MainWithSidebar from "./routes/main-with-sidebar";
 
 const router = createBrowserRouter([
   {
@@ -29,12 +35,48 @@ const router = createBrowserRouter([
     element: <SignUp/>
   },
   {
+    path: "/about",
+    element: (
+      <Base>
+        <About />
+      </Base>
+    ),
+  },
+  {
+    path: "/prices",
+    element: (
+      <Base>
+        <Prices />
+      </Base>
+    ),
+  },
+  {
+    path: "/faqs",
+    element: (
+      <Base>
+        <Faqs />
+      </Base>
+    ),
+  },
+  {
     path: "/main",
     element: <SidebarBase sidebar={<MainSidebar></MainSidebar>}></SidebarBase>,
     children: [
       {
+        path: "",
+        element: <MainWithSidebar></MainWithSidebar>
+      },
+      {
         path: "profile/",
         element: <Profile></Profile>
+      },
+      {
+        path: "works/",
+        element: <Works></Works>
+      },
+      {
+        path: "desks/",
+        element: <Desks></Desks>
       }
     ]
   }

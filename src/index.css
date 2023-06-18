@@ -454,3 +454,7 @@ html {
   #profile-side {
     display: none;
   }
+
+  .card {
+    margin-right: 70%!important;
+  }

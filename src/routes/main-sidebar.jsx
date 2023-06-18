@@ -37,7 +37,7 @@ export default function MainSidebar() {
     <hr />
     <ul className="nav nav-pills flex-column mb-auto">
       <li className="nav-item">
-        <a id="home-sidebar" href="/main/" className="side nav-link active" aria-current="page" onClick={(id) => handleClick(id)}>
+        <a id="home-sidebar" href="/main" className="side nav-link active" aria-current="page" onClick={(id) => handleClick(id)}>
           <svg className="bi me-2" width={16} height={16}>
             <use xlinkHref="#home" />
           </svg>
@@ -45,7 +45,7 @@ export default function MainSidebar() {
         </a>
       </li>
       <li>
-        <a id="dash-sidebar" href="#" className="side nav-link link-dark" onClick={(id) => handleClick(id)}>
+        <a id="dash-sidebar" href="/main/works" className="side nav-link link-dark" onClick={(id) => handleClick(id)}>
           <svg className="bi me-2" width={16} height={16}>
             <use xlinkHref="#speedometer2" />
           </svg>
@@ -53,19 +53,11 @@ export default function MainSidebar() {
         </a>
       </li>
       <li>
-        <a id="order-sidebar" href="#" className="side nav-link link-dark" onClick={(id) => handleClick(id)}>
+        <a id="order-sidebar" href="/main/desks" className="side nav-link link-dark" onClick={(id) => handleClick(id)}>
           <svg className="bi me-2" width={16} height={16}>
             <use xlinkHref="#table" />
           </svg>
           Доски
-        </a>
-      </li>
-      <li>
-        <a id="product-sidebar" href="#" className="side nav-link link-dark" onClick={(id) => handleClick(id)}>
-          <svg className="bi me-2" width={16} height={16}>
-            <use xlinkHref="#grid" />
-          </svg>
-          Карточки
         </a>
       </li>
       <li>
@@ -100,7 +92,7 @@ export default function MainSidebar() {
         aria-labelledby="dropdownUser2"
       >
         <li>
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item" href="/main/works">
             Новое рабочее пространство
           </a>
         </li>

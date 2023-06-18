@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { editUser, getUser } from "./geter";
+import { changeLeftBarNav, editUser, getUser } from "./geter";
 
 import "./profile.css"
 
@@ -18,25 +18,32 @@ export default function Profile() {
       )
 
       useEffect(() => {
-        var curr = document.getElementById('profile-side')
-        var elems = document.querySelectorAll('.side.nav-link');
-        for (var i = 0; i < elems.length; i++) {
-            if (elems[i].textContent === curr.textContent) {
-                if (elems[i].className.indexOf('link-dark') >= 0) {
-                    elems[i].className = 'side nav-link active';
-                }
-            } else {
-                elems[i].className = 'side nav-link link-dark';
-            }
-        }
+        changeLeftBarNav('profile-side')
       })
 
       const handleSubmit = (event) => {
         editUser(username, email, password).then(
           data => data.json()
         ).then(
-          data => console.log(data)
-        )
+          data => {
+            const user = data.data[0]
+            if (username !== '') {
+              if (user.name !== username) {
+                handleSubmit(event)
+              }
+            }
+            if (email !== '') {
+              if (user.email !== email) {
+                handleSubmit(event)
+              }
+            }
+            if (password !== '') {
+              if (user.password !== password) {
+                handleSubmit(event)
+              }
+            }
+          }
+        ).then(() => document.location.reload())
         event.preventDefault()
       }
 
