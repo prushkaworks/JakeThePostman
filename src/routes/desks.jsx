@@ -28,7 +28,7 @@ export default function Desks() {
                             if (desk !== null) {
                                 if (desk[0].id !== 0 && workspace.id !== 0) {
                                     if (desk[0].workspace_id === workspace.id) {
-                                        setData(old => [...old, <div>{workspace.name}/{desk[0].name}</div>])
+                                        setData(old => [...old, <div><a href={`/main/board/?desk_id=${desk[0].id}`}>{workspace.name}/{desk[0].name}</a></div>])
                                     }
                                 }
                             }

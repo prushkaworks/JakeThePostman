@@ -69,14 +69,6 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/board",
-    element: (
-      <Base>
-        <Board />
-      </Base>
-    ),
-  },
-  {
     path: "/main",
     element: <SidebarBase sidebar={<MainSidebar></MainSidebar>}></SidebarBase>,
     children: [
@@ -95,7 +87,11 @@ const router = createBrowserRouter([
       {
         path: "desks/",
         element: <Desks></Desks>
-      }
+      },
+      {
+        path: "board/",
+        element: <Board></Board>
+      },
     ]
   }
 ]);

@@ -266,3 +266,83 @@ export async function createDesk(name, w_id) {
     }).then(response => response.json())
       .then(data => data['data'])
 }
+
+export async function getColumns(desk_id) {
+    const token = getCookie('token')
+    
+    return fetch(process.env.REACT_APP_BACKEND_URL + `column/?desk_id=${desk_id}`, {
+        method: 'GET',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+    }).then(response => response.json())
+      .then(data => data['data'])
+}
+
+export async function createColumn(name, desk_id) {
+    const token = getCookie('token')
+    
+    return fetch(process.env.REACT_APP_BACKEND_URL + `column/`, {
+        method: 'POST',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: `name=${name}&desk_id=${desk_id}`
+    }).then(response => response.json())
+      .then(data => data['data'])
+}
+
+export async function getCards(column_id) {
+    const token = getCookie('token')
+    
+    return fetch(process.env.REACT_APP_BACKEND_URL + `cards/?column_id=${column_id}`, {
+        method: 'GET',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+    }).then(response => response.json())
+      .then(data => data['data'])
+}
+
+export async function createCard(name, column_id) {
+    const token = getCookie('token')
+    var user = getUser()//user_privilege
+    var user_id = await user.then((u) => u.id)
+    
+    return fetch(process.env.REACT_APP_BACKEND_URL + `cards/`, {
+        method: 'POST',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: `name=${name}&column_id=${column_id}&creator_id=${user_id}`
+    }).then(response => response.json())
+      .then(data => data['data'])
+}
+
+export async function editCard(name, card_id) {
+    const token = getCookie('token')
+    var user = getUser()//user_privilege
+    var user_id = await user.then((u) => u.id)
+    
+    return fetch(process.env.REACT_APP_BACKEND_URL + `cards/?id=${card_id}`, {
+        method: 'POST',
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: `name=${name}`
+    }).then(response => response.json())
+      .then(data => data['data'])
+}
