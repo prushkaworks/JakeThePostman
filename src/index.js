@@ -9,7 +9,10 @@ import ErrorPage from "./error-page";
 import Base from "./routes/base-page";
 import MainPage from "./routes/main-page";
 import SignIn from "./routes/signin";
-import SignUp from "./routes/signup";
+import { SignUp } from "./routes/signup";
+import SidebarBase from "./routes/sidebar-base";
+import MainSidebar from "./routes/main-sidebar";
+import Profile from "./routes/profile";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,16 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp/>
+  },
+  {
+    path: "/main",
+    element: <SidebarBase sidebar={<MainSidebar></MainSidebar>}></SidebarBase>,
+    children: [
+      {
+        path: "profile/",
+        element: <Profile></Profile>
+      }
+    ]
   }
 ]);
 

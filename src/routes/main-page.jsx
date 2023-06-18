@@ -1,3 +1,5 @@
+import "./main-divider.css"
+
 export default function MainPage() {
     return (
         <>

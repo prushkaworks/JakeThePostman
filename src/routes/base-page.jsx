@@ -26,6 +26,16 @@ export default function Base({children}) {
         </li>
         <li>
           <a
+            id="downloads"
+            href="/downloads/"
+            className="nav-link px-2"
+            onclick="handleClick(id)"
+          >
+            Загрузки
+          </a>
+        </li>
+        <li>
+          <a
             id="nav-faqs"
             href="/faqs/"
             className="nav-link px-2"
