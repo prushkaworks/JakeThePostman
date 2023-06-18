@@ -19,6 +19,8 @@ import Prices from "./routes/prices";
 import Works from "./routes/works";
 import Desks from "./routes/desks";
 import MainWithSidebar from "./routes/main-with-sidebar";
+import Download from "./routes/download";
+import Board from "./routes/board";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,22 @@ const router = createBrowserRouter([
     element: (
       <Base>
         <Faqs />
+      </Base>
+    ),
+  },
+  {
+    path: "/downloads",
+    element: (
+      <Base>
+        <Download />
+      </Base>
+    ),
+  },
+  {
+    path: "/board",
+    element: (
+      <Base>
+        <Board />
       </Base>
     ),
   },

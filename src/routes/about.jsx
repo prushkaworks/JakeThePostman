@@ -9,12 +9,9 @@ export default function About() {
 
     return (
         <>
-              <div className="px-4 pt-5 my-5 text-center">
-        
+            <div className="px-4 pt-5 my-5 text-center">
         <h1 className="display-4 fw-bold text-body-emphasis">Офисный мир КМ</h1>
-        
         <div className="col-lg-6 mx-auto">
-
           <p className="display-6 mb-4 text-body-emphasis">
             Более 25 лет работаем на рынке Юга России
           </p>
@@ -22,7 +19,7 @@ export default function About() {
       </div>
 
       <div className="container px-4 py-5" id="icon-grid">
-        <h2 className="pb-2 border-bottom text-white">
+        <h2 className="pb-2 border-bottom">
           Основные направления деятельности
         </h2>
 
